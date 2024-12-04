@@ -11,6 +11,6 @@ export class UserService {
   // create new user
   async createItem(data: User): Promise<void> {
     const itemsCollection = collection(this.firestore, this.collectionName);
-    await addDoc(itemsCollection, data);
+    await addDoc(itemsCollection, data.toJSON());
   }
 }
